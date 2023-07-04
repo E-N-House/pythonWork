@@ -1,14 +1,20 @@
+import art
+
 alphabet = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
+
 alphabet_twice = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd',
     'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
+
 continue_playing = True
+
+print(art.logo)
 
 def ceasar(method, input_text, shift_amount):
     new_text = ""
@@ -23,8 +29,7 @@ def ceasar(method, input_text, shift_amount):
             new_text += new_char
         except ValueError:
             new_text += char
-    print(f"The {method}d message is {new_text}")
-
+    print(f"The {method}d message is {new_text}\n")
 
 while continue_playing:
     direction = input(
@@ -34,7 +39,8 @@ while continue_playing:
         shift = int(input("Type the shift number:\n"))
         ceasar(method=direction, input_text=text, shift_amount=shift)
         continue_y_n = input(
-            "Would you like to continue? \n Please Type no or yes.\n").lower()
+          "Would you like to continue? \nPlease type no to close program, or yes to continue encryptions.\n").lower()
         if continue_y_n == "no":
-            continue_playing = False
+           continue_playing = False
+          
     direction = print("You entered something other than 'encode' or 'decode'")
