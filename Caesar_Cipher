@@ -18,7 +18,7 @@ def encrypt(plain_text, shift_amount):
             new_location = original_location + shift_amount
             # account for if num is more than index 25 which is last index number because of starting with 0
             if new_location > 25:
-                new_location -= 25
+                new_location -= 26
             encoded_phrase += alphabet[new_location]
         # error handeling to get around punctuation
         except ValueError:
