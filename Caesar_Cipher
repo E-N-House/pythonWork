@@ -1,0 +1,25 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
+
+#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+def encrypt(text, shift):
+  encoded_phrase = []
+    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text. 
+  for char in text:
+    try:
+      original_location = alphabet.index(char)
+      new_location = original_location + shift
+      # account for if num is more than index 25 which is last index number because of starting with 0
+      if new_location > 25:
+        new_location -= 25
+      encoded_phrase.append(alphabet[new_location])
+    # error handeling to get around punctuation
+    except ValueError:
+      encoded_phrase.append(char)
+  # make sure using "" and '' to acount for joining params
+  print(f'The encoded text is {str.join("", encoded_phrase)}')
+  
+encrypt("hellovv!", 5)
