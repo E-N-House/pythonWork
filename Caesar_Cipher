@@ -11,15 +11,15 @@ shift = int(input("Type the shift number:\n"))
 #TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 def encrypt(plain_text, shift_amount):
     encoded_phrase = ""
-    shift_amount = shift_amount%26
+    shift_amount = shift_amount % len(alphabet)
     #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
     for char in plain_text:
         try:
             original_location = alphabet.index(char)
             new_location = original_location + shift_amount
             # account for if num is more than index 25 which is last index number because of starting with 0
-            if new_location > 25:
-                new_location -= 26
+            if new_location > len(alphabet) - 1:
+                new_location -= len(alphabet)
             encoded_phrase += alphabet[new_location]
         # error handeling to get around punctuation
         except ValueError:
