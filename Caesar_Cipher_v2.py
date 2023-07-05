@@ -39,8 +39,11 @@ while continue_playing:
         shift = int(input("Type the shift number:\n"))
         ceasar(method=direction, input_text=text, shift_amount=shift)
         continue_y_n = input(
-          "Would you like to continue? \nPlease type no to close program, or yes to continue encryptions.\n").lower()
+            "Would you like to continue? \nPlease type no to close program, or yes to continue encryptions.\n"
+        ).lower()
         if continue_y_n == "no":
-           continue_playing = False
-          
-    direction = print("You entered something other than 'encode' or 'decode'")
+            continue_playing = False
+            print("Goodbye")
+    else:
+        direction = print(
+            "You entered something other than 'encode' or 'decode'")
