@@ -22,12 +22,12 @@ def ceasar(method, input_text, shift_amount):
     if method == "decode":
         shift_amount *= -1
     for char in input_text:
-        try:
+        if char in alphabet:
             position = alphabet_twice.index(char)
             new_position = position + shift_amount
             new_char = alphabet_twice[new_position]
             new_text += new_char
-        except ValueError:
+        else:
             new_text += char
     print(f"The {method}d message is {new_text}\n")
 
