@@ -22,9 +22,14 @@ operations = {
   "/": divide,
 }
 
-# User interactions
+operation_options = ""
+for symbol in operations:
+  operation_options += f"{symbol}, "
+
+# User inputs
 num1 = int(input("What is the first number?:  "))
 num2 = int(input("What is your second number?:  "))
-chosen_opperator = input("which operation would you like to preform? '+', '-', '*', or '/':  ")
+
+chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
 function = operations[chosen_opperator]
-print(function(num1, num2))
+print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
