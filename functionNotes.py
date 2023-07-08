@@ -9,11 +9,13 @@ def format_name(f_name, l_name):
 
 name = format_name("hhhhh", "bye")
 def greeting(full_name):
+  """ Takes a name and prints a customized greeting message """
   print(f"Hello {name} welcome to the show")
 
 greeting(name)
 
 def is_leap(year):
+  """ Returns True or False if input year is a leap year """
   if year % 4 == 0:
     if year % 100 == 0:
       if year % 400 == 0:
@@ -26,6 +28,8 @@ def is_leap(year):
      return False
 
 def days_in_month(input_year, input_month):
+  """ takes an year and a month and returns how many days are in it.
+  Note accounts for leap year as well """
   if input_month > 12 or input_month < 1:
       return "Invalid month"
   month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] 
