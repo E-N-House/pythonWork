@@ -27,30 +27,34 @@ operation_options = ""
 for symbol in operations:
   operation_options += f"{symbol}, "
 
-still_calculating = True
 
-# User interactions  
-num1 = int(input("What is the first number?:  "))
-chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
-num2 = int(input("What is your second number?:  "))
+def calculator():
+  still_calculating = True
+  # User interactions  
+  num1 = int(input("What is the first number?:  "))
+  chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
+  num2 = int(input("What is your second number?:  "))
+  
+  # Calculations
+  function = operations[chosen_opperator]
+  current_answer = function(num1, num2)
+  print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
+  
+  # Prompt for another go?
+  while still_calculating:
+    user_y_n = input(f"Would you like to make another calculation using the {current_answer}? 'y' for yes or 'n' for no. \n")
+    if user_y_n == "y":
+      num1 = current_answer
+      chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
+      function = operations[chosen_opperator]
+      num2 = int(input("What is your second number?:  "))
+      print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
+      current_answer = function(num1, num2)
+    elif user_y_n == "n":
+      still_calculating = False
+      print("Starting over")
+      calculator()
+    else:
+      print("Invalid response.")
 
-# Calculations
-function = operations[chosen_opperator]
-current_answer = function(num1, num2)
-print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
-
-# Prompt for another go?
-while still_calculating:
-  user_y_n = input(f"Would you like to make another calculation using the {current_answer}? 'y' for yes or 'n' for no. \n")
-  if user_y_n == "y":
-    num1 = current_answer
-    chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
-    function = operations[chosen_opperator]
-    num2 = int(input("What is your second number?:  "))
-    print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
-    current_answer = function(num1, num2)
-  elif user_y_n == "n":
-    still_calculating = False
-    print("Goodbye")
-  else:
-    print("Invalid response.")
+calculator()
