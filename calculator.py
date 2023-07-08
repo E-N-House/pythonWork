@@ -28,7 +28,6 @@ operation_options = ""
 for symbol in operations:
   operation_options += f"{symbol}, "
 
-
 def calculator():
   print(logo_calculator)
   still_calculating = True
@@ -47,9 +46,9 @@ def calculator():
     user_y_n = input(f"Would you like to make another calculation using the {current_answer}? 'y' for yes or 'n' for no. \n")
     if user_y_n == "y":
       num1 = current_answer
-      chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
+      chosen_opperator = input("Which operation would you like to perform?:  ")
       function = operations[chosen_opperator]
-      num2 = float(input("What is your second number?:  "))
+      num2 = float(input("What is your next number?:  "))
       print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
       current_answer = function(num1, num2)
     elif user_y_n == "n":
