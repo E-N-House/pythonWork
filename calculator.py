@@ -25,11 +25,16 @@ operations = {
 operation_options = ""
 for symbol in operations:
   operation_options += f"{symbol}, "
-
-# User inputs
+  
 num1 = int(input("What is the first number?:  "))
 chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
 num2 = int(input("What is your second number?:  "))
 
 function = operations[chosen_opperator]
+current_answer = function(num1, num2)
 print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
+print("Would you like to make another calculation using the answer? 'y' for yes or 'n' for no")
+chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
+function = operations[chosen_opperator]
+num2 = int(input("What is your second number?:  "))
+print(f"{current_answer} {chosen_opperator} {num2} = {function(current_answer, num2)}")
