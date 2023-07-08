@@ -1,3 +1,4 @@
+from art import logo_calculator
 # Calculator functions
 def add(n1, n2):
   """ Takes two numbers and adds them together """
@@ -29,6 +30,7 @@ for symbol in operations:
 
 
 def calculator():
+  print(logo_calculator)
   still_calculating = True
   # User interactions  
   num1 = int(input("What is the first number?:  "))
