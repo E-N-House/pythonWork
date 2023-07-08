@@ -33,9 +33,9 @@ def calculator():
   print(logo_calculator)
   still_calculating = True
   # User interactions  
-  num1 = int(input("What is the first number?:  "))
+  num1 = float(input("What is the first number?:  "))
   chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
-  num2 = int(input("What is your second number?:  "))
+  num2 = float(input("What is your second number?:  "))
   
   # Calculations
   function = operations[chosen_opperator]
@@ -49,7 +49,7 @@ def calculator():
       num1 = current_answer
       chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
       function = operations[chosen_opperator]
-      num2 = int(input("What is your second number?:  "))
+      num2 = float(input("What is your second number?:  "))
       print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
       current_answer = function(num1, num2)
     elif user_y_n == "n":
