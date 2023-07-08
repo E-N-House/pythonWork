@@ -21,3 +21,10 @@ operations = {
   "*": multiply,
   "/": divide,
 }
+
+# User interactions
+num1 = int(input("What is the first number?:  "))
+num2 = int(input("What is your second number?:  "))
+chosen_opperator = input("which operation would you like to preform? '+', '-', '*', or '/':  ")
+function = operations[chosen_opperator]
+print(function(num1, num2))
