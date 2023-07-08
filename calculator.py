@@ -28,8 +28,8 @@ for symbol in operations:
 
 # User inputs
 num1 = int(input("What is the first number?:  "))
+chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
 num2 = int(input("What is your second number?:  "))
 
-chosen_opperator = input(f"Which operation would you like to perform? \n{operation_options}:  ")
 function = operations[chosen_opperator]
 print(f"{num1} {chosen_opperator} {num2} = {function(num1, num2)}")
